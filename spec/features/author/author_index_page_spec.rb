@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "Index Author Page", type: :feature do
     it "should show all Authors" do
       visit authors_url
