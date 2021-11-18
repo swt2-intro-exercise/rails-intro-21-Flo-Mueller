@@ -8,4 +8,9 @@ require 'rails_helper'
       expect(page).to have_field('author[last_name]')
       expect(page).to have_field('author[homepage]')
     end
+    it "should not be valid if last_name is nil" do
+      visit new_author_path
+      @alan = Author.new(first_name: "Alan", last_name: nil, homepage: "http://example.com")
+      expect(@alan).to_not be_valid
+    end
   end
