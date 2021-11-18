@@ -13,4 +13,10 @@ require 'rails_helper'
       @alan = Author.new(first_name: "Alan", last_name: nil, homepage: "http://example.com")
       expect(@alan).to_not be_valid
     end
+    it "should show errors if name is nil" do
+      visit new_author_path
+      fill_in "author[first_name]", with: "Alan"
+      click_button "Save Author"
+      expect(page).to have_text("error")
+    end
   end
