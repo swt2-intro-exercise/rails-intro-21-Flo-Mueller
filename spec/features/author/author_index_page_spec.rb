@@ -7,4 +7,8 @@ describe "Authors index view", type: :feature do
       expect(page).to have_text "Homepage"
       expect(page).to have_link 'New', href: new_author_path
     end
+    it "should have edit link" do
+      visit authors_path
+      expect(page).to have_link 'Edit', href: edit_author_path
+    end
 end
