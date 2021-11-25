@@ -19,6 +19,13 @@ RSpec.describe "papers/edit", type: :view do
       assert_select "input[name=?]", "paper[venue]"
 
       assert_select "input[name=?]", "paper[year]"
+
+      assert_select "input[name=?]", "paper[author_ids][]"
     end
   end
+
+  #it "should show a single multiple select box" do
+  #  visit edit_paper_path(@paper)
+  #  expect(page).to have_text("select[multiple]")
+  #end
 end
