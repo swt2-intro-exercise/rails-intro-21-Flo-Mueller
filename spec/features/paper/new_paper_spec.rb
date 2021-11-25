@@ -14,7 +14,7 @@ describe "New paper page", type: :feature do
         expect(@papier).to_not be_valid
         @papier2 = Paper.new(title: nil, venue: "Mercedes-Benz Arena", year: 1984)
         expect(@papier2).to_not be_valid
-        @papier2 = Paper.new(title: "Party", venue: "Mercedes-Benz Arena", year: '12')
+        @papier2 = Paper.new(title: "Party", venue: "Mercedes-Benz Arena", year: 'abd')
         expect(@papier2).to_not be_valid
     end
 end
